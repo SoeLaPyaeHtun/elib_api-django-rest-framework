@@ -1,5 +1,8 @@
+from django.db import models
 from rest_framework import serializers
+from .models import Book
 
-
-class PostSerializer(serializers.Serializer):
-    pass
+class GetModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        models = Book
+        field = "__all__"

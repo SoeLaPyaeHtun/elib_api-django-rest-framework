@@ -17,9 +17,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/gets/',include(('elib_api.urls','elib_api'), namespace='elib_api'))
 ]
 
 
