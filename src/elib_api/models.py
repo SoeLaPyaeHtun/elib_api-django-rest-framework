@@ -27,7 +27,7 @@ class Book(models.Model):
     author = models.ForeignKey(
         Author, blank=True, null=True, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, blank=True, null=True)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True,null=True)
     cover_img = models.ImageField(
         upload_to="book_cover_img/", default="book_cover_img/default.jpg"
     )

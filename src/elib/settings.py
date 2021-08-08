@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # app
     'elib_api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
