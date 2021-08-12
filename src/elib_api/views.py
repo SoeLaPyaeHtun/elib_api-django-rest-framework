@@ -5,13 +5,23 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import serializers, viewsets
-from .serializers import PostModelSerializer
-from .models import Book
+from .serializers import PostBookModelSerializer,PostAuthorModelSerializer,PostCategoryModelSerializer
+from .models import Author, Book, Category
 
 
-class PostModelAPIViewSet(viewsets.ModelViewSet):
-    serializer_class = PostModelSerializer
+class PostBookModelAPIViewSet(viewsets.ModelViewSet):
+    serializer_class = PostBookModelSerializer
     queryset = Book.objects.all()
+
+
+class PostAuthorModelAPIViewSet(viewsets.ModelViewSet):
+    serializer_class = PostAuthorModelSerializer
+    queryset = Author.objects.all()
+
+
+class PostCategoryModelAPIViewSet(viewsets.ModelViewSet):
+    serializer_class = PostCategoryModelSerializer
+    queryset = Category.objects.all()
 
 
 # class PostListAPIViewSet(viewsets.ViewSet):
